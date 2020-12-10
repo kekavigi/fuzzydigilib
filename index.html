@@ -30,22 +30,18 @@
     <div class="container">
     <br>
     <h1> Bukan Digital Library ITB</h1>
-    <h3> Cara lain <em>browsing</em> katalog buku</h3>
+    <h3> Cara cepat <em>browsing</em> katalog skripsi</h3>
     <p> Tinggal tulis dan dapatkan hasil real-time. </p>
     <br>
     
       <table id="table_id" class="table table-sm table-stripped">
         <thead>
           <tr>
-            <th>date</th>
-            <th>title</th>
-            <th>keyword</th>
-            <th>description</th>
-            <th>creator</th>
-            <th>nidn</th>
-            <th>contributor</th>
-            <th>fakultas</th>
-            <th>prodi</th>
+            <th>Judul</th>
+            <th>Penulis</th>
+            <th>Dosbing</th>
+            <th>Kunci</th>
+            <th>Abstrak</th>
           </tr>
         </thead>
 
@@ -55,39 +51,21 @@
     <script>
       $(document).ready(function () {
         $("#table_id").DataTable({
-          ajax: { url: "https://github.com/kekavigi/fuzzydigilib/blob/master/digilib.json?raw=true", dataSrc: "" },
+          ajax: { url: 'kekavigi.github.io/fuzzydigilib/digilib_stripped.json', dataSrc: "" },
           "lengthMenu": [[3, 5, 10, 25, 50, -1], [3, 5, 10, 25, 50, "All"]],
           columns: [
-            { data: "date" }, //0
             { data: "title" },
-            { data: "keyword" }, //2
+            { data: "creator" },
+            { data: "contributor" },
+            { data: "keyword" }, 
             { data: "description" },
-            { data: "creator" },//4
-            { data: "nidn" },
-            { data: "contributor" },//6
-            { data: "fakultas" },
-            { data: "prodi" },//8
           ],
           columnDefs: [
             {
-              targets: [0],
-              visible: false,
-              searchable: false,
-            },
-              {
-              targets: [5],
+              targets: [3],
               visible: false,
               searchable: true,
-            },
-               {
-              targets: [7],
-              visible: false,
-              searchable: true,
-            },              {
-              targets: [8],
-              visible: false,
-              searchable: true,
-            },         
+            },    
           ],
         });
       });
@@ -98,4 +76,3 @@
 
   </body>
 </html>
-
