@@ -30,7 +30,7 @@
     <div class="container">
     <br>
     <h1> Bukan Digital Library ITB</h1>
-    <h3> Cara cepat <em>browsing</em> katalog skripsi</h3>
+    <h3> Cara cepat <em>browsing</em> katalog buku</h3>
     <p> Tinggal tulis dan dapatkan hasil real-time. </p>
     <br>
     
@@ -40,7 +40,6 @@
             <th>Judul</th>
             <th>Penulis</th>
             <th>Dosbing</th>
-            <th>Kunci</th>
             <th>Abstrak</th>
           </tr>
         </thead>
@@ -51,21 +50,13 @@
     <script>
       $(document).ready(function () {
         $("#table_id").DataTable({
-          ajax: { url: 'kekavigi.github.io/fuzzydigilib/digilib_stripped.json', dataSrc: "" },
+          ajax: { url: 'digilib_stripped.json', dataSrc: "" },
           "lengthMenu": [[3, 5, 10, 25, 50, -1], [3, 5, 10, 25, 50, "All"]],
           columns: [
             { data: "title" },
             { data: "creator" },
             { data: "contributor" },
-            { data: "keyword" }, 
             { data: "description" },
-          ],
-          columnDefs: [
-            {
-              targets: [3],
-              visible: false,
-              searchable: true,
-            },    
           ],
         });
       });
