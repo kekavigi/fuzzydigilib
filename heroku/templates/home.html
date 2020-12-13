@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <title>Result</title>
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <h1 class="display-4">Bukan Digital Library ITB</h1>
+      <p class="lead">cari tugas akhir sambil baca abstraknya.</p>
+      <br />
+      <form action="" method="POST">
+        <div class="row">
+          <div class="col-8">
+            <input type="text" class="form-control" name="searchbar" placeholder="Tulis kata apa saja yang mau dicari" />
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-primary">Cari!</button>
+          </div>
+        </div>
+      </form>
+      <br />
+
+      {%if data %}
+      <p>{{datasize}} hasil pencarian untuk "{{query}}"</p>
+      <hr />
+
+      {% for row in data -%}
+      <div class="row">
+        <h4><a href="{{'https://digilib.itb.ac.id/index.php/gdl/view/' + row.url}}" <i class="fas fa-link"> </a> {{row.title}}</h4>
+        <p>
+          <strong> {{row.creator}} </strong> <br />
+          {{row.cont}}
+        </p>
+        <p class="small">{{row.desc}}</p>
+        <p class="small fst-italic">{{row.keyword}}</p>
+      </div>
+      <br />
+      {% endfor %} {% elif in_search_mode %}
+      <p>Tidak ditemukan hasil pencarian untuk "{{query}}"</p>
+      {%endif %}
+      
+      <br>
+      
+      <p class="text-muted">Agapitus Keyka Vigiliant</p>
+      <div class="container"></div>
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
