@@ -39,21 +39,21 @@
 
       {% for row in data -%}
       <div class="row">
-        <h4><a href="{{'https://digilib.itb.ac.id/index.php/gdl/view/' + row.url}}" <i class="fas fa-link"> </a> {{row.title}}</h4>
+        <h4><a href="{{'https://digilib.itb.ac.id/index.php/gdl/view/' + row[5]}}" target="_blank" <i class="fas fa-link"> </a> {{row[0]}}</h4>
         <p>
-          <strong> {{row.creator}} </strong> <br />
-          {{row.cont}}
+          <strong> {{row[1]}} </strong> <br />
+          {{row[2]}}
         </p>
-        <p class="small">{{row.desc}}</p>
-        <p class="small fst-italic">{{row.keyword}}</p>
+        <p class="small">{{row[3]}}</p>
+        <p class="small fst-italic">{{row[4]}}</p>
       </div>
       <br />
       {% endfor %} {% elif in_search_mode %}
       <p>Tidak ditemukan hasil pencarian untuk "{{query}}"</p>
       {%endif %}
-      
+
       <br>
-      
+
       <p class="text-muted">Agapitus Keyka Vigiliant</p>
       <div class="container"></div>
     </div>

@@ -5,9 +5,16 @@ from pickle import load
 
 app = Flask(__name__)
 
-with open('dt.pickle', 'rb') as handle:
-    DICTI, TOTAL = load(handle)
+with open('d.pickle', 'rb') as handle:
+    DICTI = load(handle)
+    
 LENDICTI = len(DICTI)
+
+def transform(row):
+    res = set()
+    for col in row:
+        res.update(col.lower().split())
+    return res
 
 def found(word, textset):
     l = len(word)
@@ -16,7 +23,8 @@ def found(word, textset):
             return True
     return False
 
-def founds(words, textset):
+def founds(words, text):
+    textset = transform(text)
     for word in words.lower().split():
         if not found(word, textset):
             return False
@@ -31,7 +39,7 @@ def search():
 
     if request.method == 'POST':
         words = request.form['searchbar']
-        result = [DICTI[i] for i, text in zip(range(LENDICTI), TOTAL)
+        result = [DICTI[i] for i, text in zip(range(LENDICTI), DICTI)
                 if founds(words, text)]
 
         return render_template('home.html',
