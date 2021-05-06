@@ -33,24 +33,30 @@
       </form>
       <br />
 
-      {%if data %}
+      {% if result %}
       <p>{{datasize}} hasil pencarian untuk "{{query}}"</p>
       <hr />
 
-      {% for row in data -%}
+      {% for row in result %}
       <div class="row">
-        <h4><a href="{{'https://digilib.itb.ac.id/index.php/gdl/view/' + row[5]}}" target="_blank" <i class="fas fa-link"> </a> {{row[0]}}</h4>
+        <!-- <a href="'https://digilib.itb.ac.id/index.php/gdl/view/' + rowid" target="_blank" <i class="fas fa-link"> </a> -->
+        {%if row['group'] %}
+        <p class="small">{{row['group']}} {% if row['program'] %} - {{row['program']}} {% endif %} </p>
+        {% endif %}
+        <h4> {{row['title']}}</h4>
         <p>
-          <strong> {{row[1]}} </strong> <br />
-          {{row[2]}}
+          <strong> {{row['creator']}} </strong> <br />
+          {{row['contributor']}}
         </p>
-        <p class="small">{{row[3]}}</p>
-        <p class="small fst-italic">{{row[4]}}</p>
+        <p class="small">{{row['Keyword']}}</p>
+        <p class="small fst-italic">{{row['description']}}</p>
       </div>
       <br />
-      {% endfor %} {% elif in_search_mode %}
+      {% endfor %}
+      
+      {% elif in_search_mode %}
       <p>Tidak ditemukan hasil pencarian untuk "{{query}}"</p>
-      {%endif %}
+      {% endif %}
 
       <br>
 
