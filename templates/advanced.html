@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<header>
+</header>
+<content>
+  <div class="container align-items-center py-5">
+    <div class="row">
+      <div class="vl">
+      </div>
+      <div class="col">
+        <h1>Tentang pencarian</h1>
+        <p>Di situs ini, kueri pencarian <code>skripsi machine learning</code> akan menampilkan pustaka yang mengandung setidaknya salah satu diantara kata <code>skripsi</code> (termuat dalam informasi jenis koleksi pustaka), kata
+          <code>machine</code>, atau kata <code>learning</code>. Hal ini umumnya bukan masalah besar, karena hasil akan diurutkan berdasar tingkat relevansinya dengan kueri Anda. Namun jika Anda ingin melakukan pencarian yang lebih mendetail, Anda
+          dapat menggunakan kombinasi simbol petik ganda <kbd>"</kbd> dan minus <kbd>-</kbd>. Sebagai contoh, gunakan kueri <code>"machine learning"</code> jika anda anda ingin mencari tentang <i>machine learning</i>, dan <code style="white-space: nowrap;">-skripsi</code>
+            jika Anda tidak ingin mencari pustaka berupa skripsi.<br><br>
+
+            Anda juga dapat melakukan pencarian berdasarkan informasi fakultas, penerbit, dan sebagainya. Namun, informasi ini tidak selalu dicantumkan dalam katalog, sehingga hasil pencarian dengan informasi ini terkadang tidak bagus. Jika Anda memang tertarik untuk menggunakannya, berikut beberapa kueri yang dapat anda coba
+            <p>
+            <p>
+              <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Daftar...
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <h3>Jenis koleksi</h3>
+                <p><nobr><code>Anggota</code></nobr>, <nobr><code>Buku</code></nobr>, <nobr><code>Buku Elektronik</code></nobr>, <nobr><code>Direktori Pakar</code></nobr>, <nobr><code>Disertasi</code></nobr>, <nobr><code>Jurnal Elektronik</code></nobr>, <nobr><code>Kliping Elektronik</code></nobr>, <nobr><code>Koleksi Buku Langka</code></nobr>, <nobr><code>Laporan Penelitian</code></nobr>, <nobr><code>Literatur Kelabu</code></nobr>, <nobr><code>Organisasi</code></nobr>, <nobr><code>Peraturan Hukum</code></nobr>, <nobr><code>Prosiding</code></nobr>, <nobr><code>Skripsi</code></nobr>, <nobr><code>Tesis</code></nobr></p>
+                <h3>Fakultas</h3>
+                <p><nobr><code>FITB</code></nobr>, <nobr><code>FMIPA</code></nobr>, <nobr><code>FSRD</code></nobr>, <nobr><code>FTI</code></nobr>, <nobr><code>FTMD</code></nobr>, <nobr><code>FTSL</code></nobr>, <nobr><code>FTTM</code></nobr>, <nobr><code>SAPPK</code></nobr>, <nobr><code>SBM</code></nobr>, <nobr><code>SF</code></nobr>, <nobr><code>SITH</code></nobr>, <nobr><code>STEI</code></nobr></p>
+                <h3>Penerbit</h3>
+                <p><nobr><code>Administrasi Bisnis</code></nobr>, <nobr><code>Aktuaria</code></nobr>, <nobr><code>Arsitektur</code></nobr>, <nobr><code>Arsitektur Lanskap</code></nobr>, <nobr><code>Astronomi</code></nobr>, <nobr><code>Biologi</code></nobr>, <nobr><code>Biomanajemen</code></nobr>, <nobr><code>Bioteknologi</code></nobr>, <nobr><code>Desain</code></nobr>, <nobr><code>Desain Interior</code></nobr>, <nobr><code>Desain Komunikasi Visual</code></nobr>, <nobr><code>Desain Produk</code></nobr>, <nobr><code>Farmasi</code></nobr>, <nobr><code>Farmasi Industri</code></nobr>, <nobr><code>Farmasi Klinik dan Masyarakat</code></nobr>, <nobr><code>Fisika</code></nobr>, <nobr><code>Geofisaka Terapan</code></nobr>, <nobr><code>Ilmu Seni Rupa dan Desain</code></nobr>, <nobr><code>Ilmu dan Teknik Material</code></nobr>, <nobr><code>Informatika</code></nobr>, <nobr><code>Instrumentasi dan Kontrol</code></nobr>, <nobr><code>Keolahragaan</code></nobr>, <nobr><code>Kewirausahaan</code></nobr>, <nobr><code>Kimia</code></nobr>, <nobr><code>Kriya</code></nobr>, <nobr><code>Lain-lain</code></nobr>, <nobr><code>Logistik</code></nobr>, <nobr><code>Magister Bisnis dan Administrasi - Teknologi</code></nobr>, <nobr><code>Manajemen Rekayasa Industri</code></nobr>, <nobr><code>Matematika</code></nobr>, <nobr><code>Meteorologi</code></nobr>, <nobr><code>Mikrobiologi</code></nobr>, <nobr><code>Oseanografi</code></nobr>, <nobr><code>Pengajaran Fisika</code></nobr>, <nobr><code>Pengajaran Kimia</code></nobr>, <nobr><code>Pengajaran Matematika</code></nobr>, <nobr><code>Pengelolaan Infrastruktur Air Bersih dan Sanitasi</code></nobr>, <nobr><code>Pengelolaan Sumberdaya Air</code></nobr>, <nobr><code>Perencanaan Wilayah dan Kota</code></nobr>, <nobr><code>Rancang Kota</code></nobr>, <nobr><code>Rekayasa  Infrastruktur Lingkungan</code></nobr>, <nobr><code>Rekayasa Hayati</code></nobr>, <nobr><code>Rekayasa Kehutanan</code></nobr>, <nobr><code>Rekayasa Nuklir</code></nobr>, <nobr><code>Rekayasa Pertambangan</code></nobr>, <nobr><code>Rekayasa Pertanian</code></nobr>, <nobr><code>Rekayasa Struktur</code></nobr>, <nobr><code>Sains Kebumian</code></nobr>, <nobr><code>Sains Komputasi</code></nobr>, <nobr><code>Sains Manajemen</code></nobr>, <nobr><code>Sains dan Teknologi Farmasi</code></nobr>, <nobr><code>Sekolah Bisnis dan Manajemen</code></nobr>, <nobr><code>Sekolah Ilmu dan Teknologi Hayati</code></nobr>, <nobr><code>Seni Rupa</code></nobr>, <nobr><code>Seni Rupa Murni</code></nobr>, <nobr><code>Seni Rupa Murni dan Desain</code></nobr>, <nobr><code>Sistem dan Teknik Jalan Raya</code></nobr>, <nobr><code>Sistem dan Teknologi Informasi</code></nobr>, <nobr><code>Studi Pembangunan</code></nobr>, <nobr><code>Teknik Air Tanah</code></nobr>, <nobr><code>Teknik Bioenergi dan Kemurgi</code></nobr>, <nobr><code>Teknik Biomedis</code></nobr>, <nobr><code>Teknik Dirgantara</code></nobr>, <nobr><code>Teknik Elektro</code></nobr>, <nobr><code>Teknik Elektro dan Informatika</code></nobr>, <nobr><code>Teknik Fisika</code></nobr>, <nobr><code>Teknik Geodesi dan Geomatika</code></nobr>, <nobr><code>Teknik Geofisika</code></nobr>, <nobr><code>Teknik Geologi</code></nobr>, <nobr><code>Teknik Industri</code></nobr>, <nobr><code>Teknik Informatika</code></nobr>, <nobr><code>Teknik Kelautan</code></nobr>, <nobr><code>Teknik Kimia</code></nobr>, <nobr><code>Teknik Lingkungan</code></nobr>, <nobr><code>Teknik Material</code></nobr>, <nobr><code>Teknik Mesin</code></nobr>, <nobr><code>Teknik Metalurgi</code></nobr>, <nobr><code>Teknik Metalurgi - S1</code></nobr>, <nobr><code>Teknik Panas Bumi</code></nobr>, <nobr><code>Teknik Pangan</code></nobr>, <nobr><code>Teknik Perkeretaapian</code></nobr>, <nobr><code>Teknik Perminyakan</code></nobr>, <nobr><code>Teknik Pertambangan</code></nobr>, <nobr><code>Teknik Sains</code></nobr>, <nobr><code>Teknik Sipil</code></nobr>, <nobr><code>Teknik Telekomunikasi</code></nobr>, <nobr><code>Teknik Tenaga Listrik</code></nobr>, <nobr><code>Teknik dan Ilmu Material</code></nobr>, <nobr><code>Teknik dan Manajemen Industri</code></nobr>, <nobr><code>Teknik dan Manajemen Sumber Daya Air</code></nobr>, <nobr><code>Teknologi Pasca Panen</code></nobr>, <nobr><code>Terapan Perencanaan Kepariwisataan</code></nobr>, <nobr><code>Transportasi</code></nobr>, <nobr><code>UPT Perpustakaan<nobr><code></code></nobr></p>
+
+              </div>
+            </div>
+      </div>
+
+    </div>
+  </div>
+</content>
+<footer>
+  <div class="d-flex justify-content-center">
+    <a class="mr-3 apretty" href="index">UwU*</a>
+    <a class="apretty" href="about">¯\_(ツ)_/¯</a>
+  </div>
+</footer>
+{% endblock %}

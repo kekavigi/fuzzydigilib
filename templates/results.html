@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+  <header>
+    <div class="d-flex flex-wrap justify-content-center mt-3">
+      <div class="p-2">
+        <a href="index"><img src="{{ url_for('static', filename='img/uwu.svg') }}" alt="LoGo UwU*" style="max-width: 80px;"></a>
+      </div>
+      <div class="p-2 col-7">
+        <form action="/results" method="post" class="input-group">
+        <input type="text" name="query" class="form-control border-warning" value="{{query}}">
+        <div class="input-group-append">
+          <input class="btn btn-warning" type="submit" value="Cari"></input>
+        </div>
+      </form>
+      </div>
+    </div>
+  </header>
+  <content>
+    <div class="container align-items-center">
+      <div class="mb">{{total}} hasil</div>
+      {% for info in response %}
+      <div class="row mb-3">
+        <div class="vla">
+        </div>
+        <div class="col">
+          <span>{{info.tanggal}}</span>
+          <h2 class="font-weight-bold"><a class="apretty" href="{{info.id}}">{{info.judul}}</a></h2>
+          <p><span class="font-weight-bold">{{info.oleh}}</span> <span>{{info.kontributor}}</span><p/>
+          {% if info.abstrak +%}
+          <p>
+            <a class="btn btn-sm btn-outline-dark" data-toggle="collapse" href="#abstrak-{{info.id}}" role="button">
+              Abstrak
+            </a>
+          </p>
+          <div class="collapse" id="abstrak-{{info.id}}">
+            <div class="card card-body">
+              {{info.abstrak}}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </content>
+  <footer>
+  </footer>
+{% endblock %}

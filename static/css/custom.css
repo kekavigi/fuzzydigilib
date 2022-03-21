@@ -1,0 +1,37 @@
+body {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 1vh; //height of the footer
+  box-sizing: border-box;
+}
+footer {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+h1 {
+  font-weight: 700;
+}
+
+.apretty{
+  color: black;
+}
+.apretty:hover {
+  color: black;
+  text-decoration: none;
+  border-bottom: solid orange;
+}
+
+.vl {border-left: 6px solid orange;}
+.vla {border-left: 6px solid red;}
+.vlb {border-left: 6px solid DarkBlue;}
+
+@media (max-width: @screen-xs) {
+    body{font-size: 10px;}
+}
+
+@media (max-width: @screen-sm) {
+    body{font-size: 14px;}
+}
