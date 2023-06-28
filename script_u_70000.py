@@ -1,3 +1,6 @@
+# Copyright 2023 Agapitus Keyka Vigiliant
+# SPDX-License-Identifier: Apache-2.0
+
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
@@ -8,8 +11,8 @@ from time import sleep
 from tqdm import tqdm  #type: ignore
 import json
 
-PATH_PROFILE = r'C:/Users/kekav/Documents/Koding/fuzzydigilib/profile'
-PATH_GECKOD = r'C:/Users/kekav/Documents/Koding/fuzzydigilib/geckodriver.exe'
+PATH_PROFILE = r'./profile'
+PATH_GECKOD = r'./geckodriver.exe'
 PATH_BINARY = r'C:/Program Files/Mozilla Firefox/firefox.exe'
 
 options = Options()
@@ -59,7 +62,7 @@ def extract_page(id_library, folder):
         json.dump(data, f)
 
 
-start  = 69_040
+start  = 69_846
 end    = 70_000
 folder = f"raw_under_{end}"
 

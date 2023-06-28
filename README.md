@@ -18,7 +18,7 @@ Dalam membuat database yang mampu melakukan pencarian teks dengan baik dan cepat
 Sedangkan untuk situs, saya memilih Flask untuk membuatnya. Desain tampilan disusun sehingga semua info mengenai pustaka dapat dilihat secara cepat dan mudah -- setidaknya di layar berukuran besar, dan setidaknya bagi saya. Heroku dipilih sebagai hos karena sifatnya yang gratis, dan saya tidak berkeberatan dengan batasan yang terjadi.
 
 ## Lisensi
-Saya menggunakan [MIT License](LICENSE.txt)
+Kode sumber repo ini menggunakan lisensi [Apache 2.0](LICENSE)
 
 
 ## Catatan kaki

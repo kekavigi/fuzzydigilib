@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "fuzzydigilib"
+version = "0.1.0"
+description = "List of scientific works collected by Digital Library ITB"
+authors = ["Agapitus Keyka Vigiliant <kekavigi@gmail.com>"]
+license = "Apache 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+selenium = "^4.10.0"
+bs4 = "^0.0.1"
+tqdm = "^4.65.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
