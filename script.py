@@ -11,7 +11,7 @@ from time import sleep
 from tqdm import tqdm  #type: ignore
 import json
 
-PATH_PROFILE = r'./profile'
+# PATH_PROFILE = r'./profile'
 
 options = Options()
 options.add_argument('-headless')
@@ -55,12 +55,13 @@ def extract_page(id_library, folder):
         json.dump(data, f)
 
 
-start  = 70_000
-end    = 80_000
-folder = f"raw_under_{end}"
+if __name__ == "__main__":
+    start  = 76_191
+    end    = 80_000
+    folder = f"raw_under_{end}"
 
-for i in tqdm(range(start,  end)):
-    try:
-        extract_page(i, folder)
-    except AttributeError:
-        pass
+    for i in tqdm(range(start,  end)):
+        try:
+            extract_page(i, folder)
+        except AttributeError:
+            pass
