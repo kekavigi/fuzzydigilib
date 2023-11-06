@@ -11,7 +11,6 @@ from time import sleep
 from tqdm import tqdm  #type: ignore
 import json
 
-# PATH_PROFILE = r'./profile'
 
 options = Options()
 options.add_argument('-headless')
