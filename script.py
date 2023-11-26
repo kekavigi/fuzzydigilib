@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup as bs  #type: ignore
 
 from time import sleep
 from tqdm import tqdm  #type: ignore
+from os import listdir
 import json
 
 
@@ -17,7 +18,7 @@ options.add_argument('-headless')
 
 driver = webdriver.Firefox(options=options)
 
-def extract_page(id_library, folder):
+def extract_page(id_library):
     driver.get(f'https://digilib.itb.ac.id/gdl/view/{id_library}')
     sleep(1)
     soup = bs(driver.page_source, 'lxml')
@@ -42,25 +43,33 @@ def extract_page(id_library, folder):
     for td in soup.find_all('tr'):
         key, _, value = td.find_all('td')
         key = key.text.strip()
-
         if key == 'Kontributor / Dosen Pembimbing':
             value = [_.text.strip() for _ in value.find_all('li')]
         else:
             value = value.text.strip()
-
         data[key] = value
 
-    with open(f'./{folder}/{id_library}.json', 'w') as f:
+    return data
+
+def save_json(id_library, data):
+    g = 1+id_library//10000
+    fpath = f'./raw_under_{g}0000/{id_library}.json'
+
+    with open(fpath, 'w') as f:
         json.dump(data, f)
 
 
 if __name__ == "__main__":
-    start  = 76_191
-    end    = 80_000
-    folder = f"raw_under_{end}"
+    limit = max(int(folder[10:]) for folder in listdir() if folder[:10]=='raw_under_')
+    start = max(int(fname[:-5]) for fname in listdir(f"./raw_under_{limit}"))
 
-    for i in tqdm(range(start,  end)):
+    with open('config.json') as f:
+        config = json.load(f)
+    latest = config['latest']
+
+    for i in tqdm(range(start,  latest+1)):
         try:
-            extract_page(i, folder)
+            save_json(i, extract_page(i))
+
         except AttributeError:
             pass
